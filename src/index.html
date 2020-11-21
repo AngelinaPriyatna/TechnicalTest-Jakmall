@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/27522a12c8.js" crossorigin="anonymous"></script>
+    <title>Delivery - Jakmall Technical Test - Angelina Priyatna</title>
+</head>
+<body class="test">
+    <a href=""><i class="fas fa-arrow-circle-left">      back to cart</i></a>
+    <br>
+    <br>
+
+    <div class="main-content">
+        <div class="header">
+            <header>
+                <b>1. Delivery</b>  >  2. Payment  >  3. Finish
+            </header>
+        </div>
+        <div class = container>
+            <div class = one>
+                
+                <div class="content">
+                    <h1 class="title">Delivery details</h1>
+                </div>
+
+                <div class="form1" id="form-1" >
+                    <form class="form_content" @submit.prevent="processForm">
+                        <input type="email" id="email" class="input" name="email" placeholder="Email" v-model="email" @blur="validateEmail"><br><br>
+                        <input type="tel" id="pnumb" class="input" name="pnumb" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" v-model="pnumb" @blur="validatePnumb"><br><br>
+                        <textarea id="address" class="input" name="address" rows="4" cols="50" placeholder="Delivery Address" v-model="address" @blur="validateAddress"></textarea>
+                    </form>
+                    
+                    <!-- ERROR TEXT -->
+                    <p class="errors" v-if="errors.email">please enter a valid email</p>
+                    <p class="errors" v-if="errors.phoneNumb">please enter a valid phone number '0-9,-,+,(,)'</p>
+                    <p class="errors" v-if="errors.address">please enter a valid address (Max. 120 characters)</p>
+
+                </div>
+    
+            </div>
+            
+            <div class = two id="form-2">
+                <div class="dropshipper_cb">
+                    <input type="checkbox" id="dropshipper" value="dropshipper">
+                    <label for="dropshipper">Send as dropshipper</label><br>
+                </div>
+                <div class="form2">
+                    <form class="form2_content" @submit.prevent="processForm">
+                        <input type="text" id="name_ds" class="input" name="name" placeholder="Dropshipper Name" v-model="name_ds" @blur="validateName"><br><br>
+                        <input type="tel" id="pnumb_ds" class="input" name="pnumb" placeholder="Dropshipper Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" v-model="pnumb_ds" @blur="validatePnumb">
+                    </form>
+                    
+                    <!-- ERROR TEXT -->
+                    <p class="errors" v-if="errors.phoneNumb_ds">please enter a valid phone number '0-9,-,+,(,)'</p>
+                    <p class="errors" v-if="errors.name_ds">please enter a valid address (Max. 120 characters)</p>
+
+                </div>
+            </div>
+            
+            <div class = three>
+                <h2 class="title2">Summary</h2>
+                <small>10 items purchased</small>
+               
+
+                <div class="container2">
+                    <div class="txt1">Cost of goods</div>
+                    <div class="txt2">Dropshipping Fee</div>
+                    <div class="price1">500,000</div>
+                    <div class="price2">5,900</div>
+                    <div class="totalprice-txt">Total</div>
+                    <div class= total-price>505,900</div>
+                </div>
+                
+                <a href="payment.html" class="link"><button class="continue-btn" type="submit">Continue to Payment</button></a>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <!-- VUEJS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <!-- <script>
+        //FORM-1
+        var app = new Vue({
+            el: '#form-1',
+            data:{
+                email: '',
+                phoneNumb: '',
+                address: '',
+                errors: {
+                    email: false,
+                    phoneNumb: false,
+                    address: false
+                }
+            },
+            methods: {
+                processForm: function(){
+                    console.log({email: this.email, phoneNumb: this.pnumb, address: this.address});
+                }
+            },
+            validateEmail: function(){
+                const isValid = window.isValidEmail(this.email);
+                console.log(isValid);
+                if(isValid = false){
+                    email.style.border = "1px solid Red";
+                } else {
+                    email.style.border = "1px solid Green";
+                }
+                this.errors.email = !isValid;
+            },
+            validatePnumb: function(){
+                const isValid = window.isValidPnumb(this.phoneNumb);
+                console.log(isValid);
+                if(isValid = false){
+                    phoneNumb.style.border = "1px solid Red";
+                } else {
+                    phoneNumb.style.border = "1px solid Green";
+                }
+                this.errors.phoneNumb = !isValid;
+            },
+            validateAddress: function(){
+                const isValid = window.isValidAddress(this.address);
+                console.log(isValid);
+                if(isValid = false){
+                    address.style.border = "1px solid Red";
+                } else {
+                    address.style.border = "1px solid Green";
+                }
+                this.errors.address = !isValid;
+            }
+        });
+
+        //FORM-2 -- Dropshipper
+        var app = new Vue({
+            el: '#form-2',
+            data:{
+                name_ds: '',
+                phoneNumb_ds: '',
+                errors: {
+                    name_ds: false,
+                    phoneNumb_ds: false,
+                }
+            },
+            methods: {
+                processForm: function(){
+                    console.log({name_ds: this.name_ds, phoneNumb_ds: this.phoneNumb_ds});
+                }
+            },
+            validateName: function(){
+                const isValid = window.isValidName(this.name_ds);
+                console.log(isValid);
+                if(isValid = false){
+                    name_ds.style.border = "1px solid Red";
+                } else {
+                    name_ds.style.border = "1px solid Green";
+                }
+                this.errors.name = !isValid;
+            },
+            validatePnumb: function(){
+                const isValid = window.isValidPnumb(this.phoneNumb_ds);
+                console.log(isValid);
+                if(isValid = false){
+                    phoneNumb_ds.style.border = "1px solid Red";
+                } else {
+                    phoneNumb_ds.style.border = "1px solid Green";
+                }
+                this.errors.phoneNumb_ds = !isValid;
+            },
+        });
+
+        function isValidEmail(email){
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        function isValidPnumb(phoneNumb){
+            var re = /^[0-9]+$/;
+            if(phoneNumb!=re && phoneNumb.lengt<6 || phoneNumb.length>20){
+                return re.test(phoneNumb);
+            }
+        }
+        function isValidPnumb(phoneNumb_ds){
+            var re = /^[0-9]+$/;
+            if(phoneNumb!=re && phoneNumb_ds.lengt<6 || phoneNumb_ds.length>20){
+                return re.test(phoneNumb_ds);
+            }
+        }
+        function isValidAddress(address){
+            if(address.isEmpty && address.length>120){
+                return re.test(address);
+            }
+        }
+        function isValidName(name_ds){
+            if(name_ds.isEmpty){
+                return re.test(name_ds);
+            }
+        }
+
+    </script> -->
+
+</body>
+</html>

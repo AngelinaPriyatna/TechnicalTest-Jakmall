@@ -1,0 +1,257 @@
+@media screen and (max-width: 800px) 
+    .left, .main, .right 
+        width: 100%
+
+.link
+    text-decoration none
+    cursor pointer
+
+.test
+    padding 20px
+    background-color #fffcd9
+    font-family arial
+
+.header
+    color #ff9442
+    text-align center
+    margin auto
+    width 50%
+    border-bottom-left-radius 50px
+    border-bottom-right-radius 50px
+    background-color #fffcd9
+    padding-bottom 15px
+
+.fas fa-arrow-circle-left
+    font-style none
+    color black
+    font-family arial
+
+    
+.main-content
+    background-color white
+    height auto
+
+//DELIVERY
+.container
+    display grid
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start
+    overflow: hidden;
+
+.one
+    grid-column 1
+    grid-row 1
+
+.two
+    margin-top 10px
+    grid-column 2
+    grid-row 1
+    height 450px
+    border-right 1px solid #ffcdb0
+
+.three
+    grid-column 3
+    grid-row 1
+    margin-left 15px
+
+.dropshipper_cb
+    margin-top 37px
+    margin-bottom 53px
+    margin-right 60px
+    text-align right
+
+.form1, .form2
+    padding 20px
+
+.form_content, .form2_content
+    padding 10px
+
+#email, #pnumb, #name_ds, #pnumb_ds
+    width: 415px
+    height: 50px
+
+.title
+    margin-left 15px
+    color #ff9442
+
+.title2
+    color #ff9442
+    margin-top 50px
+    margin-block-end 0
+
+#address::placeholder
+    padding-top 7px
+    font-family arial
+
+.content
+    padding 20px
+
+.container2
+    display grid
+    margin-top 200px
+    padding 10px
+    grid-template 100px 50px
+
+.txt1
+    grid-column 1
+    grid-row 1
+    margin-bottom 10px
+
+.price1
+    grid-column 2
+    grid-row 1
+    text-align right
+    font-weight bold
+    margin-bottom 10px
+
+.txt2
+    grid-column 1
+    grid-row 2
+    margin-bottom 10px
+
+.price2
+    grid-column 2
+    grid-row 2
+    text-align right
+    font-weight bold
+    margin-bottom 10px
+
+.totalprice-txt
+    grid-column 1
+    grid-row 4
+    color #ff9442
+    font-weight bold
+    font-size 20px
+    margin-bottom 15px
+
+.total-price
+    grid-column 2
+    grid-row 4
+    color #ff9442
+    text-align right
+    font-weight bold
+    font-size 20px
+    margin-bottom 15px
+
+.continue-btn
+    margin:0 auto;
+    margin-bottom 10px
+    display:block;
+    width 70%
+    background-color #ff9442
+    text-align center
+    font-size 18px
+    font-weight bold
+    color white
+    border 0
+    padding 17px
+
+// PAYMENT
+
+.container-payment-finish
+    padding 10px
+    display grid
+    grid-template 130px 100px
+
+.one-payment-finish
+    grid-column 1
+    border-right 1px solid #ffcdb0
+
+.two-payment-finish
+    grid-column 2
+    margin-left 10px
+    
+.radio-label 
+    background white
+    border 1px solid lightgrey
+    border-radius 5px
+    box-shadow 0 2px 4px rgba(0,0,0,0.05)
+    cursor pointer
+    display inline-block
+    font-weight 600
+    justify-content center
+    margin 0 auto 10px
+    padding 20px 20px 20px 70px
+    position relative
+    transition .3s ease all
+    width 130px
+    height 40px
+
+.radio-label:hover 
+    box-shadow 0 4px 8px rgba(0,0,0,0.05)
+
+.radio-label:before
+    background white
+    border-radius 50%
+    content ''
+    left 20px
+    position absolute
+    transition .3s ease background-color
+    height 30px
+    width 30px
+
+.radio-label span 
+    webkit-user-select none
+    moz-user-select none
+    user-select none
+
+.radio-label span em 
+    display block
+    font-size 80%
+    font-style normal
+    font-weight 300
+    line-height 1.2
+
+.radio-btn
+    position absolute
+    visibility hidden
+
+.radio-btn:checked + .radio-label 
+    background white
+    border-color green
+
+.radio-btn:checked + .radio-label:before 
+    background-color green
+    background-repeat no-repeat
+
+.grid-rb-shipment, .grid-rb-payment
+    align-content: space-evenly
+    display grid
+    grid-template-columns 230px 230px 230px
+
+#radio-1.1, radio-2.1
+    grid-column 1
+
+#radio-1.2, radio-2.2
+    grid-column 2
+
+#radio-1.3, radio-2.3
+    grid-column 3
+
+.txt3
+    grid-column 1
+    grid-row 3
+    margin-bottom 10px
+
+.price3
+    grid-column 2
+    grid-row 3
+    text-align right
+    font-weight bold
+    margin-bottom 10px
+
+.line
+    width 35%
+    color lightgrey
+    margin-left 0
+    
+.content-finish
+    display block
+    margin 0
+    margin-top 200px
+    padding-left 100px
+    align-self center
+
+.delivery-est-choice, .payment-est-choice
+    color green
+    font-weight bold
